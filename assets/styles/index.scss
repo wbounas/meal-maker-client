@@ -70,9 +70,19 @@ main {
 
 .create-ingredient-test-container {
   border: 1px solid $black;
+  display: none;
   float: left;
   margin-left: 42px;
   padding: 20px;
+  width: fit-content;
+}
+
+.logged-in-dropdown {
+  display: none;
+}
+
+.log-out-btn {
+  margin: 0 auto;
   width: fit-content;
 }
 
