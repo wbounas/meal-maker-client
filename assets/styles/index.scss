@@ -1,7 +1,7 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-// @import '~node_modules/octicons/build';
+// @import '~node_modules/octicons/build/build.css';
 
 body {
   padding-top: 64px;
@@ -44,6 +44,8 @@ main {
 
 // footer {}
 
-@media screen and (max-width: 768px) {
-  body { padding-top: 64px; }
+// breakpoint set for iPhone 7
+@media screen and (max-width: 420px) {
+  body { padding-top: 84px; }
+  .gh-btn { margin: 0 auto; }
 }
