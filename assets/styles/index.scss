@@ -1,2 +1,49 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+// @import '~node_modules/octicons/build';
+
+body {
+  padding-top: 64px;
+}
+
+h1,
+h3 {
+  text-align: center;
+}
+
+h1 {
+  line-height: 0;
+}
+
+.navbar {
+  width: 100%;
+}
+
+.navbar-brand {
+  font-size: 34px;
+}
+
+.dropdown-menu {
+  padding: 20px;
+  padding-top: 0;
+  width: 300px;
+}
+
+.sign-in-forms {
+  margin-bottom: 10px;
+}
+
+.form-signin-heading {
+  text-align: center;
+}
+
+main {
+  clear: both;
+}
+
+// footer {}
+
+@media screen and (max-width: 768px) {
+  body { padding-top: 64px; }
+}

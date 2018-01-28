@@ -1,18 +1,69 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <title>Meal[Maker] Client - BETA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="node_modules/octicons/build/build.css">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
+    <!-- Do not add `link` tags-->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Do not add `script` tags-->
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  </head>
+
+  <body class="container-fluid">
+    <header>
+
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Meal[Maker]</a>
+            <p class="navbar-text">Signed in as Mark Otto</p>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">About</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign-In <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <form class="form-signin">
+                      <h2 class="form-signin-heading">Please login</h2>
+                      <!-- first login box -->
+                      <input type="email" class="form-control sign-in-forms" id="exampleInputEmail1" name="username" placeholder="Email Address" required="" autofocus="" />
+                      <input type="password" class="form-control sign-in-forms" name="password" placeholder="Password" required=""/>
+                      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+                    </form>
+                  </li>
+                  <li role="separator" class="divider"></li>
+                  <li>
+                    <button class="btn btn-default btn-info btn-block" type="submit" href="#">No Account? Sign Up Here!</button>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+
+      <h1>Meal[Maker]<br></h1>
+      <h3>Front-End Client BETA</h3>
+
+    </header>
+
+    <main>
 
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -21,5 +72,22 @@
       velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
       est laborum.</p>
-    </body>
+
+    </main>
+
+    <footer class="footer">
+
+      <div class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+          <p class="navbar-text pull-left">&copy; 2018 Built with &#10084; by Will Bounas
+               <a href="http://tinyurl.com/tbvalid" target="_blank" >HTML 5 Validation</a>
+          </p>
+
+          <a href="https://www.github.com/wbounas/meal-maker-client" class="navbar-btn btn-danger btn pull-right">
+          <img src="node_modules/octicons/build/svg/logo-github.svg"></img></a>
+        </div>
+      </div>
+
+    </footer>
+  </body>
 </html>
