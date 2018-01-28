@@ -11,11 +11,21 @@ const onSignUp = function () {
   console.log('hello world. data is :', data)
   api.signUp(data)
     .then(ui.signUpSuccess)
-    .then(ui.signUpFailure)
+    .catch(ui.signUpFailure)
+}
+
+const onSignIn = function () {
+  const data = getFormFields(this)
+  event.preventDefault()
+  console.log('hello world! data is:', data)
+  api.signIn(data)
+    .then(ui.signInSuccess)
+    .catch(ui.signInFailure)
 }
 
 const addHandlers = function () {
   $('#sign-up-test').on('submit', onSignUp)
+  $('#sign-in-form').on('submit', onSignIn)
 }
 
 module.exports = {

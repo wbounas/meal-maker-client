@@ -9,13 +9,34 @@ const signUpSuccess = function (data) {
   $('#navbar-user-email').html(`${store.user.email}`)
 }
 
-const signUpFailure = function () {
+const signUpFailure = function (error) {
+  console.log('error occurred! please see below for more details:')
+  console.error(error)
   $('#sign-up-test').each(function () {
+    this.reset()
+  })
+}
+
+const signInSuccess = function (data) {
+  store.user = data.user
+  console.log('sign in success! store.user is:', store.user)
+  $('#navbar-user-email').html(`${store.user.email}`)
+  $('#sign-in-form').each(function () {
+    this.reset()
+  })
+}
+
+const signInFailure = function (error) {
+  console.log('error occurred! please see below for more details:')
+  console.error(error)
+  $('#sign-in-form').each(function () {
     this.reset()
   })
 }
 
 module.exports = {
   signUpSuccess,
-  signUpFailure
+  signUpFailure,
+  signInSuccess,
+  signInFailure
 }
