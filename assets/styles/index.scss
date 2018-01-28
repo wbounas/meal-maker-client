@@ -3,6 +3,9 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 // @import '~node_modules/octicons/build/build.css';
 
+$black: #000;
+$navbar-black: #263238;
+
 body {
   padding-top: 64px;
 }
@@ -19,6 +22,12 @@ h1 {
 .navbar {
   width: 100%;
 }
+
+.mm-nav {
+  background-color: $navbar-black;
+}
+
+
 
 .navbar-brand {
   font-size: 34px;
@@ -42,8 +51,8 @@ main {
   clear: both;
 }
 
-.test-sign-up {
-  border: 1px solid #000;
+.sign-up-test-container {
+  border: 1px solid $black;
   margin-top: 64px;
   padding: 20px;
   width: fit-content;
