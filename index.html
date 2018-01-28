@@ -18,6 +18,7 @@
   <body class="container-fluid">
     <header>
 
+      <!-- navbar -->
       <nav class="navbar navbar-inverse navbar-fixed-top mm-nav">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
@@ -37,87 +38,102 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
+
+              <!-- about navbar button -->
               <li><a href="#">About</a></li>
 
-              <!-- sign-in dropdown -->
-              <!-- <div class="sign-in-dropdown-container"> -->
-                <li class="dropdown sign-in-dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign-In <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li>
-
-                      <form id="sign-in-form">
-
-                        <!-- login box -->
-                        <!-- header -->
-                        <h2 class="form-signin-heading">. :Please login: .</h2>
-                        <!-- email -->
-                        <input name="credentials[email]" type="email" class="form-control sign-in-forms" id="exampleInputEmail1" name="username" placeholder="Email Address" required="" autofocus="" />
-
-                        <!-- password -->
-                        <input name="credentials[password]" type="password" class="form-control sign-in-forms" name="password" placeholder="Password" required=""/>
-
-                        <!-- login button -->
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-
-                      </form>
-                    </li>
-                    <li role="separator" class="divider"></li>
-                    <li>
-                      <button class="btn btn-default btn-info btn-block" type="submit" href="#">No Account? Sign Up Here!</button>
-                    </li>
-
-                    <!-- launch modal button -->
-                    <li>
-                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">
-                        Launch demo modal
-                      </button>
-                    </li>
-
-                  </ul>
-                </li>
-              <!-- </div> -->
-              <!-- END of sign-in drop down -->
-
-              <!-- logged-in drop down -->
-              <div class="logged-in-dropdown">
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account Controls <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li>
-
-                      <form id="account-controls-form">
-
-                        <!-- Account Controls box -->
-                        <!-- header -->
-                        <h2 class="form-signin-heading">. :Welcome, <span id="logged-in-user-email"></span> : .</h2>
-
-                        <!-- New Password Confirmation #1 -->
-                        <label for="newPasswordConfirmation1">New Password</label>
-                        <input name="credentials[email]" type="password" class="form-control sign-in-forms" id="newPasswordConfirmation1" name="password" placeholder="Enter new password" required="" autofocus="" />
-
-                        <!-- New Password Confirmation #2 -->
-                        <label for="newPasswordConfirmation2">Confirm New Password</label>
-                        <input name="credentials[email]" type="password" class="form-control sign-in-forms" id="newPasswordConfirmation2" name="confirmPassword" placeholder="Enter new password again" required="" autofocus="" />
-
-                        <!-- Change Password button -->
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Change Password</button>
-
-                      </form>
-                    </li>
-                    <li role="separator" class="divider"></li>
-                    <li>
-                      <button class="btn btn-default btn-danger btn-block log-out-btn" id="sign-out-btn" type="submit" href="#">Log Out</button>
-                    </li>
-                  </ul>
-                </li>
-              </div>
-              <!-- END of logged-in dropdown -->
-
             </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+
+              <!-- SIGN-IN dropdown -->
+              <!-- <div class="sign-in-dropdown-container"> -->
+              <li class="dropdown sign-in-dropdown" id="sign-in-dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign-In <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+
+                  <li>
+                    <form id="sign-in-form">
+
+                      <!-- login box -->
+                      <!-- header -->
+                      <h2 class="form-signin-heading">Please login</h2>
+                      <!-- email -->
+                      <input name="credentials[email]" type="email" class="form-control sign-in-forms" id="exampleInputEmail1" name="username" placeholder="Email Address" required="" autofocus="" />
+
+                      <!-- password -->
+                      <input name="credentials[password]" type="password" class="form-control sign-in-forms" name="password" placeholder="Password" required=""/>
+
+                      <!-- login button -->
+                      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+
+                    </form>
+                  </li>
+                  <li role="separator" class="divider"></li>
+                  <li>
+                    <button class="btn btn-default btn-info btn-block" type="submit" href="#">No Account? Sign Up Here!</button>
+                  </li>
+
+                  <!-- launch modal button -->
+                  <li>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">
+                      Launch demo modal
+                    </button>
+                  </li>
+
+                </ul>
+              </li>
+            </ul>
+            <!-- </div> -->
+            <!-- END of SIGN-IN drop down -->
+
+            <!-- LOGGED-IN drop down -->
+            <div class="account-nav">
+              <div id="account-nav" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown logged-in-dropdown">
+                  <li class="dropdown logged-in-dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account Controls <span class="caret"></span></a>
+
+                    <!-- body of drop down -->
+                    <ul class="dropdown-menu">
+                      <li>
+
+                        <form id="account-controls-form">
+
+                          <!-- Account Controls box -->
+                          <!-- header -->
+                          <h2 class="form-signin-heading">Welcome, <span id="logged-in-user-email"></span></h2>
+
+                          <!-- New Password Confirmation #1 -->
+                          <label for="newPasswordConfirmation1">New Password</label>
+                          <input name="credentials[email]" type="password" class="form-control sign-in-forms" id="newPasswordConfirmation1" name="password" placeholder="Enter new password" required="" autofocus="" />
+
+                          <!-- New Password Confirmation #2 -->
+                          <label for="newPasswordConfirmation2">Confirm New Password</label>
+                          <input name="credentials[email]" type="password" class="form-control sign-in-forms" id="newPasswordConfirmation2" name="confirmPassword" placeholder="Enter new password again" required="" autofocus="" />
+
+                          <!-- Change Password button -->
+                          <button class="btn btn-lg btn-primary btn-block" type="submit">Change Password</button>
+
+                        </form>
+                      </li>
+                      <li role="separator" class="divider"></li>
+                      <li>
+                        <button class="btn btn-default btn-danger btn-block log-out-btn" id="sign-out-btn" type="submit" href="#">Log Out</button>
+                      </li>
+                    </ul>
+                  </li>
+                </div>
+              </ul>
+              </div>
+            </li>
+            <!-- END of LOGGED-IN dropdown -->
+
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
+      <!-- END of navbar -->
 
       <!-- modal window -->
       <!-- Modal -->
@@ -178,32 +194,8 @@
       <!-- container for all forms in <main> -->
       <div class="container test-forms-holder">
 
-      <!-- sign up test -->
-      <div class="container sign-up-test-container">
-
-        <h2 class="sign-up-header">Sign Up Test Form</h2>
-
-        <form role="form" id="sign-up-test">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input name="credentials[email]" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-          </div>
-          <div class="form-group">
-            <label for="passwordConfirmation1">Password</label>
-            <input name="credentials[password]" type="password" class="form-control" id="passwordConfirmation1" placeholder="Type Password">
-          </div>
-          <div class="form-group">
-            <label for="passwordConfirmation2">Password Confirmation</label>
-            <input name="credentials[password_confirmation]" type="password" class="form-control" id="passwordConfirmation2" placeholder="Type Password Again">
-          </div>
-          <button type="submit" class="btn btn-default">Create an Account</button>
-        </form>
-
-      </div>
-      <!-- END sign up test -->
-
       <!-- create an ingredient test -->
-      <div class="container create-ingredient-test-container">
+      <div class="create-ingredient-test-container">
 
         <h2 class="sign-up-header">Create an Ingredient Test</h2>
 

@@ -56,6 +56,15 @@ main {
   margin: 40px auto 0;
 }
 
+.create-ingredient-test-container {
+  border: 1px solid $black;
+  display: none;
+  // float: left;
+  margin: 0 auto;
+  padding: 20px;
+  width: fit-content;
+}
+
 .sign-in-modal {
   width: fit-content;
 }
@@ -77,22 +86,17 @@ main {
   text-align: right;
 }
 
-.create-ingredient-test-container {
-  border: 1px solid $black;
-  display: none;
-  float: left;
-  margin-left: 42px;
-  padding: 20px;
-  width: fit-content;
-}
-
-.logged-in-dropdown {
+.account-nav {
   display: none;
 }
 
 .log-out-btn {
   margin: 0 auto;
   width: fit-content;
+}
+
+.logged-in-dropdown {
+  display: none;
 }
 
 // footer {}

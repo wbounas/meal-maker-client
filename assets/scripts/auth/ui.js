@@ -8,17 +8,14 @@ const signUpSuccess = function (data) {
   console.log('sign up success! store.user is:', store.user)
   $('#navbar-user-email').html(`${store.user.email}`)
   $('#logged-in-user-email').html(`${store.user.email}`)
-  $('.logged-in-dropdown').css('display', 'inline-block')
-  $('.logged-in-dropdown').css('display', 'inline-block')
-  setTimeout(function () { $('.create-ingredient-test-container').css('display', 'inline-block') }, 1000)
+  $('#sign-up-test').each(function () {
+    this.reset()
+  })
 }
 
 const signUpFailure = function (error) {
   console.log('error occurred! please see below for more details:')
   console.error(error)
-  $('#sign-up-test').each(function () {
-    this.reset()
-  })
 }
 
 const signInSuccess = function (data) {
@@ -26,7 +23,8 @@ const signInSuccess = function (data) {
   console.log('sign in success! store.user is:', store.user)
   $('#navbar-user-email').html(`${store.user.email}`)
   $('#logged-in-user-email').html(`${store.user.email}`)
-  $('.logged-in-dropdown').css('display', 'list-item')
+  $('#sign-in-dropdown').css('display', 'none')
+  $('.account-nav').css('display', 'inline')
   $('#sign-in-form').each(function () {
     this.reset()
   })
@@ -46,6 +44,8 @@ const signOutSuccess = function (data) {
   $('#logged-in-dropdown').css('display', 'none')
   $('#navbar-user-email').html(`SIGNED OUT - TEST - `)
   $('#logged-in-user-email').html(`SIGNED OUT - TEST -`)
+  $('.account-nav').css('display', 'none')
+  $('#sign-in-dropdown').css('display', 'inline-block')
   $('.create-ingredient-test-container').css('display', 'none')
 }
 

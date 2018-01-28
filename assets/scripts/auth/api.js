@@ -24,8 +24,9 @@ const signIn = function (data) {
 
 // send DELETE to /sign-out/:id
 const signOut = function (data) {
+  console.log('store.user.token before signOut is:', store.user.token)
   return $.ajax({
-    url: config.apiOrigin + '/sign-out/',
+    url: config.apiOrigin + '/sign-out',
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
