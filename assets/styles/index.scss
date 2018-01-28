@@ -7,7 +7,9 @@ $black: #000;
 $navbar-black: #263238;
 
 body {
-  padding-bottom: 64px;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 84px;
   padding-top: 64px;
 }
 
@@ -51,13 +53,13 @@ main {
 }
 
 .test-forms-holder {
-  margin: 0 auto;
+  margin: 40px auto 0;
+
 }
 
 .sign-up-test-container {
   border: 1px solid $black;
   float: left;
-  margin-top: 64px;
   padding: 20px;
   width: fit-content;
 }
@@ -69,7 +71,6 @@ main {
 .create-ingredient-test-container {
   border: 1px solid $black;
   float: left;
-  margin-top: 64px;
   margin-left: 42px;
   padding: 20px;
   width: fit-content;
