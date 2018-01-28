@@ -66,6 +66,14 @@
                     <li>
                       <button class="btn btn-default btn-info btn-block" type="submit" href="#">No Account? Sign Up Here!</button>
                     </li>
+
+                    <!-- launch modal button -->
+                    <li>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">
+                        Launch demo modal
+                      </button>
+                    </li>
+
                   </ul>
                 </li>
               <!-- </div> -->
@@ -83,6 +91,7 @@
                         <!-- Account Controls box -->
                         <!-- header -->
                         <h2 class="form-signin-heading">. :Welcome, <span id="logged-in-user-email"></span> : .</h2>
+
                         <!-- New Password Confirmation #1 -->
                         <label for="newPasswordConfirmation1">New Password</label>
                         <input name="credentials[email]" type="password" class="form-control sign-in-forms" id="newPasswordConfirmation1" name="password" placeholder="Enter new password" required="" autofocus="" />
@@ -110,6 +119,45 @@
         </div><!-- /.container-fluid -->
       </nav>
 
+      <!-- modal window -->
+      <!-- Modal -->
+      <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog sign-in-modal" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <!-- sign up test -->
+              <div class="container sign-up-test-container">
+
+                <h2 class="sign-up-header">Sign Up Test Form</h2>
+
+                <form role="form" id="sign-up-test">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input name="credentials[email]" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                    <label for="passwordConfirmation1">Password</label>
+                    <input name="credentials[password]" type="password" class="form-control" id="passwordConfirmation1" placeholder="Type Password">
+                  </div>
+                  <div class="form-group">
+                    <label for="passwordConfirmation2">Password Confirmation</label>
+                    <input name="credentials[password_confirmation]" type="password" class="form-control" id="passwordConfirmation2" placeholder="Type Password Again">
+                  </div>
+                  <div class="sign-up-buttons">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Create an Account</button>
+                  </div>
+                </form>
+                  <!-- END sign up test container -->
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <!-- END of modal -->
+
       <h1>Meal[Maker]<br></h1>
       <h3>Front-End Client BETA</h3>
 
@@ -127,7 +175,9 @@
         est laborum.</p>
       </div>
 
+      <!-- container for all forms in <main> -->
       <div class="container test-forms-holder">
+
       <!-- sign up test -->
       <div class="container sign-up-test-container">
 

@@ -54,18 +54,27 @@ main {
 
 .test-forms-holder {
   margin: 40px auto 0;
+}
 
+.sign-in-modal {
+  width: fit-content;
 }
 
 .sign-up-test-container {
   border: 1px solid $black;
-  float: left;
+  // float: left;
   padding: 20px;
   width: fit-content;
 }
 
 .sign-up-header {
   margin-top: 0;
+  text-align: center;
+}
+
+.sign-up-buttons {
+  margin: 0 auto;
+  text-align: right;
 }
 
 .create-ingredient-test-container {
