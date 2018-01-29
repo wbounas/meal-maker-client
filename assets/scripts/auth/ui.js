@@ -39,7 +39,8 @@ const signUpFailure = function (error) {
 
 const signInSuccess = function (data) {
   store.user = data.user // data is a JSON user object "user" containing key/value pairs of 'id', 'email', and 'token'
-  // console.log('sign in success! store.user is:', store.user)
+
+  // nav-bar user messaging to contain logged in user's name
   $('#navbar-user-email').html(`Hello, ${store.user.email}!`)
   $('#logged-in-user-email').html(`${store.user.email}`)
 
@@ -58,10 +59,11 @@ const signInSuccess = function (data) {
     this.reset()
   })
 
-  // make create-ingredient form and fridge appear
+  // make create-ingredient form, fridge, and update-ingredient form appear
   setTimeout(function () { $('.create-ingredient-test-container').css('display', 'inline-block') }, 1000)
   setTimeout(function () { $('#fridge').css('display', 'inline-block') }, 1250)
-  // handlebars template to get user's books
+  setTimeout(function () { $('#update-ingredient-container').css('display', 'inline-block') }, 1500)
+  // handlebars template to get user's ingredients
   apiIngredients.getIngredients()
     .then(uiIngredients.getIngsSuccess)
     .catch(uiIngredients.getIngsFailure)

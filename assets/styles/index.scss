@@ -80,7 +80,16 @@ main {
   border: 1px solid $black;
   display: none;
   margin: 0 auto;
-  margin-left: 50px;
+  // margin-left: 50px;
+  padding: 20px;
+  width: fit-content;
+}
+
+.update-ingredient-container {
+  border: 1px solid $black;
+  display: none;
+  // float: left;
+  margin: 0 auto;
   padding: 20px;
   width: fit-content;
 }

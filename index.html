@@ -192,7 +192,7 @@
       <!-- container for all forms in <main> -->
       <div class="container test-forms-holder">
 
-        <!-- create an ingredient test -->
+        <!-- CREATE an ingredient container -->
         <div class="create-ingredient-test-container">
 
           <h2 class="sign-up-header">Add an Ingredient to the Fridge!</h2>
@@ -218,16 +218,43 @@
           </form>
 
         </div>
-        <!-- END create an ingredient test -->
+        <!-- END CREATE an ingredient container -->
 
-        <!-- get users' ingredient test -->
+        <!-- REFRIDGERATOR to get users' ingredients -->
         <div class="get-ingredients-test-container"  id="fridge">
 
           <h2 class="sign-up-header">Your Refridgerator</h2>
 
         </div>
-        <!-- END get users' ingredients test -->
+        <!-- END REFRIDGERATOR to get users' ingredients -->
 
+        <!-- UDPATE an ingredient container -->
+        <div class="update-ingredient-container" id="update-ingredient-container">
+
+          <h2 class="sign-up-header">Add an Ingredient to the Fridge!</h2>
+
+          <form role="form" id="update-ingredient-form">
+            <div class="form-group">
+              <label for="ingredient-name3">Ingredient Name</label>
+              <input name="ingredient[name]" type="text" class="form-control" id="ingredient-name3" placeholder="Enter ingredient">
+            </div>
+            <div class="form-group">
+              <label for="ingredient-unit3">Ingredient Unit</label>
+              <input name="ingredient[unit]" type="text" class="form-control" id="ingredient-unit3" placeholder="Enter unit type">
+            </div>
+            <div class="form-group">
+              <label for="ingredient-quantity3">Ingredient Quantity</label>
+              <input name="ingredient[quantity]" type="number" class="form-control" id="ingredient-quantity3" placeholder="Enter # of ingredient">
+            </div>
+            <div class="form-group">
+              <label for="ingredient-notes3">Ingredient Notes</label>
+              <input name="ingredient[notes]" type="text" class="form-control" id="ingredient-notes3" placeholder="Enter notes about ingredient">
+            </div>
+            <button type="submit" class="btn btn-default">Update an Ingredient in your Fridge!</button>
+          </form>
+
+        </div>
+        <!-- END UDPATE an ingredient container -->
 
       </div>
       <!-- END of container for all forms -->

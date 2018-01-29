@@ -23,8 +23,14 @@ const onRemoveIngredient = function (event) {
     .catch(ui.removeIngredientFailure)
 }
 
+const onUpdateIngredient = function (event) {
+  event.preventDefault()
+  console.log('update ingredient button worked!')
+}
+
 const addHandlers = function () {
   $('#create-ingredient-test').on('submit', onCreateIngredient)
+  $('#update-ingredient-form').on('submit', onUpdateIngredient)
   $('body').on('click', '#remove-ing', onRemoveIngredient)
 }
 
