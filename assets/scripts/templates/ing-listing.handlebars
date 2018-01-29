@@ -1,0 +1,32 @@
+{{#each ingredients as |ingredient|}}
+
+  <!-- {{> partial}} -->
+  <!-- NOTE: 'partial' can be named anything, as long as the filename is named the same! -->
+  <!-- Don't uncomment yet -->
+
+ <!-- Developers, why are we using data-id and not just id? -->
+<ul data-id="{{ingredient.id}}">
+  <li>
+    <h1> <small>Ingredient: {{ingredient.name}}</small></h1>
+  </li>
+  <li>
+    <h1> <small>Unit: {{ingredient.unit}}</small></h1>
+  </li>
+  <li>
+    <h1> <small>Quantity: {{ingredient.quantity}}</small></h1>
+  </li>
+  <li>
+    <div>
+      {{#if ingredient.notes}}
+        {{ingredient.notes}}
+      {{else}}
+        No notes provided.
+      {{/if}}
+    </div>
+  </li>
+  <li>
+    <button class="remove-ing">Remove</button>
+  </li>
+</ul>
+
+{{/each}}

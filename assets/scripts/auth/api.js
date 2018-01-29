@@ -35,8 +35,20 @@ const signOut = function (data) {
   })
 }
 
+// send GET to /ingredients?user_id=:id
+const getIngs = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/ingredients?user_id=' + store.user.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
-  signOut
+  signOut,
+  getIngs
 }

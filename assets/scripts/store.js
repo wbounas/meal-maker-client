@@ -2,4 +2,9 @@
 
 const store = {}
 
-module.exports = store
+const ingredients = {}
+
+module.exports = {
+  store,
+  ingredients
+}
