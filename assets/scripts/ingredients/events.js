@@ -6,7 +6,7 @@ const api = require('./api')
 const ui = require('./ui')
 
 const onCreateIngredient = function (event) {
-  const data = getFormFields(this) // data becomes a JSON object "ingredient" with key/value pairs 'name', 'unit', and 'quantity'
+  const data = getFormFields(this) // data becomes a JSON object "ingredient" with key/value pairs based on the 'name' of each field in the form e.g. ingredient[form-field-name]
   // console.log('this worked? data is:', data)
   event.preventDefault()
   api.createIngredient(data) // pass in 'data', or in this case a JSON object "ingredient" to API call
