@@ -6,20 +6,18 @@ const api = require('./api')
 const ui = require('./ui')
 
 const onCreateIngredient = function (event) {
-  const data = getFormFields(this)
-  // const ingID = data.ingredient.id
-  console.log('this worked? data is:', data)
+  const data = getFormFields(this) // data becomes a JSON object "ingredient" with key/value pairs 'name', 'unit', and 'quantity'
+  // console.log('this worked? data is:', data)
   event.preventDefault()
-  api.createIngredient(data)
+  api.createIngredient(data) // pass in 'data', or in this case a JSON object "ingredient" to API call
     .then(ui.createIngredientSuccess)
     .catch(ui.createIngredientFailure)
 }
 
 const onRemoveIngredient = function (event) {
   event.preventDefault()
-  const data = $(this).parents('ul').data('id')
-  const fridgeRemoveBtn = event.target
-  console.log('in onRemoveIngredient, data is:', data)
+  const data = $(this).parents('ul').data('id') // this is the ingredient's ID based on the data-id of the parent <ul> from handlebars
+  const fridgeRemoveBtn = event.target // event.target is the button
   api.deleteIngredient(data)
     .then(ui.removeIngredientSuccess(fridgeRemoveBtn))
     .catch(ui.removeIngredientFailure)

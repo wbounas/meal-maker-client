@@ -21,9 +21,8 @@ const signUpFailure = function (error) {
 }
 
 const signInSuccess = function (data) {
-  store.user = data.user
-  console.log('sign in success! store.user is:', store.user)
-  console.log('data.ingredients is:', data.ingredients)
+  store.user = data.user // data is a JSON user object "user" containing key/value pairs of 'id', 'email', and 'token'
+  // console.log('sign in success! store.user is:', store.user)
   $('#navbar-user-email').html(`${store.user.email}`)
   $('#logged-in-user-email').html(`${store.user.email}`)
   $('#sign-in-dropdown').css('display', 'none')
