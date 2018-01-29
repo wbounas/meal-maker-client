@@ -76,6 +76,15 @@ main {
   width: fit-content;
 }
 
+.get-ingredients-test-container {
+  border: 1px solid $black;
+  display: none;
+  margin: 0 auto;
+  margin-left: 50px;
+  padding: 20px;
+  width: fit-content;
+}
+
 .sign-up-header {
   margin-top: 0;
   text-align: center;

@@ -29,6 +29,7 @@ const signInSuccess = function (data) {
     this.reset()
   })
   setTimeout(function () { $('.create-ingredient-test-container').css('display', 'inline-block') }, 1000)
+  setTimeout(function () { $('#fridge').css('display', 'inline-block') }, 1250)
 }
 
 const signInFailure = function (error) {
@@ -47,6 +48,7 @@ const signOutSuccess = function (data) {
   $('.account-nav').css('display', 'none')
   $('#sign-in-dropdown').css('display', 'inline-block')
   $('.create-ingredient-test-container').css('display', 'none')
+  $('#fridge').css('display', 'none')
 }
 
 const signOutFailure = function (error) {
