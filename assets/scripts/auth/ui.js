@@ -56,6 +56,7 @@ const signOutSuccess = function (data) {
   $('.account-nav').css('display', 'none')
   $('#sign-in-dropdown').css('display', 'inline-block')
   $('.create-ingredient-test-container').css('display', 'none')
+  $('#fridge').children('ul').remove()
   $('#fridge').css('display', 'none')
 }
 
