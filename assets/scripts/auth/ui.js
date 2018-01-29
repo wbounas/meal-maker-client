@@ -10,7 +10,14 @@ const signUpSuccess = function (data) {
   console.log('sign up success! store.user is:', store.user)
   $('#navbar-user-email').html(`${store.user.email}`)
   $('#logged-in-user-email').html(`${store.user.email}`)
-  $('#sign-up-test').each(function () {
+  $('#sign-up-msg').html('Account Created! Please Sign In!')
+  $('#sign-up-msg').css('padding', '10px')
+  $('#sign-up-msg').css('color', '#0f0')
+  $('#sign-up-msg').css('background', '#444')
+  $('#sign-up-msg').css('width', 'fit-content')
+  $('#sign-up-msg').css('margin', '0 auto')
+  $('#sign-up-msg').css('padding', '5px')
+  $('#sign-up-form').each(function () {
     this.reset()
   })
 }
@@ -18,6 +25,12 @@ const signUpSuccess = function (data) {
 const signUpFailure = function (error) {
   console.log('error occurred! please see below for more details:')
   console.error(error)
+  $('#sign-up-msg').html('Error has Occurred. Please try again!')
+  $('#sign-up-msg').css('padding', '10px')
+  $('#sign-up-msg').css('color', '#f00')
+  $('#sign-up-msg').css('background', '#000')
+  $('#sign-up-msg').css('width', 'fit-content')
+  $('#sign-up-msg').css('margin', '0 auto')
 }
 
 const signInSuccess = function (data) {

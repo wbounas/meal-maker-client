@@ -59,7 +59,7 @@
                       <!-- header -->
                       <h2 class="form-signin-heading">Please login</h2>
                       <!-- email -->
-                      <input name="credentials[email]" type="email" class="form-control sign-in-forms" id="exampleInputEmail1" name="username" placeholder="Email Address" required="" autofocus="" />
+                      <input name="credentials[email]" type="email" class="form-control sign-in-forms" name="username" placeholder="Email Address" required="" autofocus="" />
 
                       <!-- password -->
                       <input name="credentials[password]" type="password" class="form-control sign-in-forms" name="password" placeholder="Password" required=""/>
@@ -133,7 +133,7 @@
       <!-- END of navbar -->
 
       <!-- modal window -->
-      <!-- Modal -->
+      <!-- Sign-Up Modal -->
       <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog sign-in-modal" role="document">
           <div class="modal-content">
@@ -141,9 +141,10 @@
               <!-- sign up test -->
               <div class="container sign-up-test-container">
 
-                <h2 class="sign-up-header">Sign Up Test Form</h2>
+                <h2 class="sign-up-header">Create an Account</h2>
+                <p class="sign-up-msg" id="sign-up-msg"></p>
 
-                <form role="form" id="sign-up-test">
+                <form role="form" id="sign-up-form">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
                     <input name="credentials[email]" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
@@ -169,7 +170,7 @@
 
         </div>
       </div>
-      <!-- END of modal -->
+      <!-- END of Sign-Up modal -->
 
       <h1>Meal[Maker]<br></h1>
       <h3>Front-End Client BETA</h3>

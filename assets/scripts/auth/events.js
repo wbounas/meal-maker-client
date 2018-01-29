@@ -37,7 +37,7 @@ const onSignOut = function () {
 }
 
 const addHandlers = function () {
-  $('#sign-up-test').on('submit', onSignUp)
+  $('#sign-up-form').on('submit', onSignUp)
   $('#sign-in-form').on('submit', onSignIn)
   $('#sign-out-btn').on('click', onSignOut)
 }
