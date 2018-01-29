@@ -10,7 +10,12 @@ const createIngredientFailure = function (error) {
   console.error(error)
 }
 
+const removeIngredient = function (data) {
+  $(data).parents('ul').empty()
+}
+
 module.exports = {
   createIngredientSuccess,
-  createIngredientFailure
+  createIngredientFailure,
+  removeIngredient
 }
