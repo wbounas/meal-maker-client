@@ -16,6 +16,18 @@ const createIngredient = function (data) {
   })
 }
 
+const deleteIngredient = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/ingredients/' + data,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
-  createIngredient
+  createIngredient,
+  deleteIngredient
 }

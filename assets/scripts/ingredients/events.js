@@ -16,8 +16,12 @@ const onCreateIngredient = function (event) {
 
 const onRemoveIngredient = function (event) {
   event.preventDefault()
-  const data = event.target
-  ui.removeIngredient(data)
+  const data = $(this).parents('ul').data('id')
+  const fridgeItem = event.target
+  console.log('in onRemoveIngredient, data is:', data)
+  api.deleteIngredient(data)
+    .then(ui.removeIngredientSuccess(fridgeItem))
+    .catch(ui.removeIngredientFailure)
 }
 
 const addHandlers = function () {
