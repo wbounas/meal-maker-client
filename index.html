@@ -228,33 +228,45 @@
         </div>
         <!-- END REFRIDGERATOR to get users' ingredients -->
 
-        <!-- UDPATE an ingredient container -->
-        <div class="update-ingredient-container" id="update-ingredient-container">
+        <!-- UPDATE-INGREDIENT Modal -->
+        <div class="modal fade" id="create-ingredient-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog sign-in-modal" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
 
-          <h2 class="sign-up-header">Add an Ingredient to the Fridge!</h2>
+                <!-- UDPATE-INGREDIENT container -->
+                <div class="update-ingredient-container" id="update-ingredient-container">
 
-          <form role="form" id="update-ingredient-form">
-            <div class="form-group">
-              <label for="ingredient-name3">Ingredient Name</label>
-              <input name="ingredient[name]" type="text" class="form-control" id="ingredient-name3" placeholder="Enter ingredient">
-            </div>
-            <div class="form-group">
-              <label for="ingredient-unit3">Ingredient Unit</label>
-              <input name="ingredient[unit]" type="text" class="form-control" id="ingredient-unit3" placeholder="Enter unit type">
-            </div>
-            <div class="form-group">
-              <label for="ingredient-quantity3">Ingredient Quantity</label>
-              <input name="ingredient[quantity]" type="number" class="form-control" id="ingredient-quantity3" placeholder="Enter # of ingredient">
-            </div>
-            <div class="form-group">
-              <label for="ingredient-notes3">Ingredient Notes</label>
-              <input name="ingredient[notes]" type="text" class="form-control" id="ingredient-notes3" placeholder="Enter notes about ingredient">
-            </div>
-            <button type="submit" class="btn btn-default">Update an Ingredient in your Fridge!</button>
-          </form>
+                  <h2 class="sign-up-header">Update your Ingredient!</h2>
 
+                  <form role="form" id="update-ingredient-form">
+                    <div class="form-group">
+                      <label for="ingredient-name3">Ingredient Name</label>
+                      <input name="ingredient[name]" type="text" class="form-control" id="ingredient-name3" placeholder="Enter ingredient">
+                    </div>
+                    <div class="form-group">
+                      <label for="ingredient-unit3">Ingredient Unit</label>
+                      <input name="ingredient[unit]" type="text" class="form-control" id="ingredient-unit3" placeholder="Enter unit type">
+                    </div>
+                    <div class="form-group">
+                      <label for="ingredient-quantity3">Ingredient Quantity</label>
+                      <input name="ingredient[quantity]" type="number" class="form-control" id="ingredient-quantity3" placeholder="Enter # of ingredient">
+                    </div>
+                    <div class="form-group">
+                      <label for="ingredient-notes3">Ingredient Notes</label>
+                      <input name="ingredient[notes]" type="text" class="form-control" id="ingredient-notes3" placeholder="Enter notes about ingredient">
+                    </div>
+                    <button type="submit" class="btn btn-default" id="update-ingredient-btn">Update an Ingredient in your Fridge!</button>
+                  </form>
+
+                </div>
+                <!-- END UDPATE-INGREDIENT container -->
+
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- END UDPATE an ingredient container -->
+        <!-- END of UPDATE-INGREDIENT modal -->
 
       </div>
       <!-- END of container for all forms -->
@@ -270,7 +282,7 @@
           </p>
 
             <a href="https://www.github.com/wbounas/meal-maker-client" class="navbar-btn btn-danger btn pull-right">
-            <img src="node_modules/octicons/build/svg/logo-github.svg" /></a>
+            <img src="node_modules/octicons/build/svg/logo-github.svg" alt="GitHub" /></a>
         </div>
       </div>
 
