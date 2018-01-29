@@ -97,7 +97,7 @@ const signOutSuccess = function (data) {
   $('#sign-in-msg').css('display', 'none')
   $('#sign-in-dropdown').css('display', 'inline-block')
   $('.create-ingredient-test-container').css('display', 'none')
-  $('#fridge').children('ul').remove()
+  $('#fridge-contents').children('ul').remove()
   $('#fridge').css('display', 'none')
 }
 
