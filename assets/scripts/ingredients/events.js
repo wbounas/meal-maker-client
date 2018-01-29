@@ -14,24 +14,30 @@ const onCreateIngredient = function (event) {
     .catch(ui.createIngredientFailure)
 }
 
-const onRemoveIngredient = function (event) {
+const onDeleteIngredient = function (event) {
   event.preventDefault()
   const data = $(this).parents('ul').data('id') // this is the ingredient's ID based on the data-id of the parent <ul> from handlebars
   const fridgeRemoveBtn = event.target // event.target is the button
   api.deleteIngredient(data)
-    .then(ui.removeIngredientSuccess(fridgeRemoveBtn))
-    .catch(ui.removeIngredientFailure)
+    .then(ui.deleteIngredientSuccess(fridgeRemoveBtn))
+    .catch(ui.deleteIngredientFailure)
 }
 
 const onUpdateIngredient = function (event) {
-  event.preventDefault()
   console.log('update ingredient button worked!')
+  const data = getFormFields(this)
+  const ingID = $('#update-ing').parents('ul').data('id')
+  console.log('ingID is:', ingID)
+  event.preventDefault()
+  api.updateIngredient(data, ingID)
+    .then(ui.updateIngredientSuccess)
+    .catch(ui.updateIngredientFailure)
 }
 
 const addHandlers = function () {
   $('#create-ingredient-test').on('submit', onCreateIngredient)
   $('#update-ingredient-form').on('submit', onUpdateIngredient)
-  $('body').on('click', '#remove-ing', onRemoveIngredient)
+  $('body').on('click', '#remove-ing', onDeleteIngredient)
 }
 
 module.exports = {

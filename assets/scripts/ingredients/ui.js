@@ -19,11 +19,11 @@ const createIngredientFailure = function (error) {
   console.error(error)
 }
 
-const removeIngredientSuccess = function (data) {
-  $(data).parents('ul').empty()
+const deleteIngredientSuccess = function (fridgeRemoveButton) {
+  $(fridgeRemoveButton).parents('ul').empty()
 }
 
-const removeIngredientFailure = function (error) {
+const deleteIngredientFailure = function (error) {
   console.log('ERROR has occurred, please see below')
   console.error(error)
 }
@@ -40,11 +40,22 @@ const getIngsFailure = function (error) {
   console.error(error)
 }
 
+const updateIngredientSuccess = function (data) {
+  console.log('PATCH ingredient worked! data is:', data)
+}
+
+const updateIngredientFailure = function (error) {
+  console.log('ERROR please see below')
+  console.error(error)
+}
+
 module.exports = {
   createIngredientSuccess,
   createIngredientFailure,
-  removeIngredientSuccess,
-  removeIngredientFailure,
+  deleteIngredientSuccess,
+  deleteIngredientFailure,
   getIngsSuccess,
-  getIngsFailure
+  getIngsFailure,
+  updateIngredientSuccess,
+  updateIngredientFailure
 }

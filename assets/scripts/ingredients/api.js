@@ -38,8 +38,20 @@ const getIngredients = function () {
   })
 }
 
+const updateIngredient = function (data, ingID) {
+  return $.ajax({
+    url: config.apiOrigin + '/ingredients/' + ingID,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   createIngredient,
   deleteIngredient,
-  getIngredients
+  getIngredients,
+  updateIngredient
 }
