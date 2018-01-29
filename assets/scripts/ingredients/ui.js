@@ -2,10 +2,13 @@
 'use strict'
 
 const store = require('../store')
+const showIngTemplate = require('../templates/add-ing-listing.handlebars')
 const showIngsTemplate = require('../templates/ing-listing.handlebars')
 
-const createIngredientSuccess = function () {
-  console.log('it worked!')
+const createIngredientSuccess = function (data) {
+  console.log('it worked! data inside of createIngredientSuccess is:', data)
+  const showIngHtml = showIngTemplate({ ingredient: data.ingredient })
+  $('#fridge').append(showIngHtml)
 }
 
 const createIngredientFailure = function (error) {

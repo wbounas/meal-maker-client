@@ -7,6 +7,7 @@ const ui = require('./ui')
 
 const onCreateIngredient = function (event) {
   const data = getFormFields(this)
+  // const ingID = data.ingredient.id
   console.log('this worked? data is:', data)
   event.preventDefault()
   api.createIngredient(data)
@@ -17,10 +18,10 @@ const onCreateIngredient = function (event) {
 const onRemoveIngredient = function (event) {
   event.preventDefault()
   const data = $(this).parents('ul').data('id')
-  const fridgeItem = event.target
+  const fridgeRemoveBtn = event.target
   console.log('in onRemoveIngredient, data is:', data)
   api.deleteIngredient(data)
-    .then(ui.removeIngredientSuccess(fridgeItem))
+    .then(ui.removeIngredientSuccess(fridgeRemoveBtn))
     .catch(ui.removeIngredientFailure)
 }
 
