@@ -27,7 +27,19 @@ const deleteIngredient = function (data) {
   })
 }
 
+// send GET to /ingredients?user_id=:id
+const getIngredients = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/ingredients?user_id=' + store.user.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createIngredient,
-  deleteIngredient
+  deleteIngredient,
+  getIngredients
 }
