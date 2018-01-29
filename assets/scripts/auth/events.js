@@ -14,7 +14,7 @@ const onSignUp = function () {
     .catch(ui.signUpFailure)
 }
 
-const onSignIn = function () {
+const onSignIn = function (event) {
   const data = getFormFields(this) // data is stored as a "credentials" JSON array containing 'email' and 'password' key/value pairs
   event.preventDefault()
   // console.log('hello world! data is:', data)

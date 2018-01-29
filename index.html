@@ -31,7 +31,7 @@
             </button>
             <a class="navbar-brand" href="#">Meal[Maker]</a>
             <ul class="nav navbar-nav navbar-left">
-              <li><a href="#">Signed in as <span id="navbar-user-email">Mark Otto</span></a></li>
+              <li><a href="#"><span id="navbar-user-email">Please sign in.</span></a></li>
             </ul>
           </div>
 
@@ -58,6 +58,7 @@
                       <!-- login box -->
                       <!-- header -->
                       <h2 class="form-signin-heading">Please login</h2>
+                      <p class="sign-in-msg" id="sign-in-msg"></p>
                       <!-- email -->
                       <input name="credentials[email]" type="email" class="form-control sign-in-forms" name="username" placeholder="Email Address" required="" autofocus="" />
 
@@ -132,13 +133,13 @@
       </nav>
       <!-- END of navbar -->
 
-      <!-- modal window -->
       <!-- Sign-Up Modal -->
       <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog sign-in-modal" role="document">
           <div class="modal-content">
             <div class="modal-body">
-              <!-- sign up test -->
+
+              <!-- Sign-Up form container -->
               <div class="container sign-up-test-container">
 
                 <h2 class="sign-up-header">Create an Account</h2>
@@ -162,12 +163,11 @@
                     <button type="submit" class="btn btn-primary">Create an Account</button>
                   </div>
                 </form>
-                  <!-- END sign up test container -->
               </div>
+              <!-- END of Sign-Up form container -->
+
             </div>
           </div>
-
-
         </div>
       </div>
       <!-- END of Sign-Up modal -->
