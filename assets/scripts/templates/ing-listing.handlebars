@@ -7,10 +7,10 @@
  <!-- Developers, why are we using data-id and not just id? -->
 <ul data-id="{{ingredient.id}}">
   <li>
-    <p> <small>Ingredient: {{ingredient.name}}</small> </p>
-    <p> <small>Unit: {{ingredient.unit}}</small> </p>
-    <p> <small>Quantity: {{ingredient.quantity}}</small> </p>
-    <p> {{#if ingredient.notes}}
+    <p class="name" data-name="{{ingredient.name}}"> <small>Ingredient: {{ingredient.name}}</small> </p>
+    <p class="unit" data-unit="{{ingredient.unit}}"> <small>Unit: {{ingredient.unit}}</small> </p>
+    <p class="quantity" data-quantity="{{ingredient.quantity}}"> <small>Quantity: {{ingredient.quantity}}</small> </p>
+    <p class="notes" data-notes="{{ingredient.notes}}"> {{#if ingredient.notes}}
       {{ingredient.notes}}
     {{else}}
       No notes provided.

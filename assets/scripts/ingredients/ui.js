@@ -8,11 +8,21 @@ const api = require('./api')
 
 const createIngredientSuccess = function (data) {
   // console.log('it worked! data inside of createIngredientSuccess is:', data)
-  const showIngHtml = showIngTemplate({ ingredient: data.ingredient }) // data is the return from the API call
-  $('#fridge').append(showIngHtml)
+  // const showIngHtml = showIngTemplate({ ingredient: data.ingredient }) // data is the return from the API call
+  // $('#fridge').append(showIngHtml)
+
+  // reset create-ingredient form
   $('#create-ingredient-test').each(function () {
     this.reset()
   })
+
+  // empty the contents of the fridge
+  $('#fridge-contents').empty()
+
+  // repopulate the fridge with user's ingredients
+  api.getIngredients()
+    .then(getIngsSuccess)
+    .catch(getIngsFailure)
 }
 
 const createIngredientFailure = function (error) {
@@ -20,9 +30,9 @@ const createIngredientFailure = function (error) {
   console.error(error)
 }
 
-const deleteIngredientSuccess = function (fridgeRemoveButton) {
+const deleteIngredientSuccess = function (button) {
   // remove the <ul> from handlebars that contains the ingredient whose child had the remove button
-  $(fridgeRemoveButton).parents('ul').empty()
+  $(button).parents('ul').empty()
 }
 
 const deleteIngredientFailure = function (error) {
@@ -31,7 +41,7 @@ const deleteIngredientFailure = function (error) {
 }
 
 const getIngsSuccess = function (data) {
-  // console.log('GET ingredients worked! data is:', data)
+  console.log('GET ingredients worked! data is:', data)
   store.ingredients = data.ingredients // data is a JSON array containing all ingredients for that user
   const showIngsHtml = showIngsTemplate({ ingredients: data.ingredients })
   $('#fridge-contents').append(showIngsHtml)
@@ -61,7 +71,8 @@ const updateIngredientSuccess = function (data) {
   })
 
   // empty out fridge, and re-stock with newly updated ingredient included
-  $('#fridge-contents').children('ul').remove()
+  $('#fridge-contents').empty()
+
   api.getIngredients()
     .then(getIngsSuccess)
     .catch(getIngsFailure)
