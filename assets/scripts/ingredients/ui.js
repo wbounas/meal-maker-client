@@ -16,6 +16,18 @@ const createIngredientSuccess = function (data) {
     this.reset()
   })
 
+  // create-ingredient success messaging
+  $('#create-ing-msg').css('display', 'block')
+  $('#create-ing-msg').html('Ingredient created, and added to your fridge!')
+  $('#create-ing-msg').css('padding', '10px')
+  $('#create-ing-msg').css('margin-bottom', '10px')
+  $('#create-ing-msg').css('color', '#0f0')
+  $('#create-ing-msg').css('background', '#444')
+  $('#create-ing-msg').css('width', 'fit-content')
+  $('#create-ing-msg').css('margin', '0 auto')
+  setTimeout(function () { $('#create-ing-msg').css('display', 'none') }, 3500)
+  setTimeout(function () { $('#create-ing-msg').html('') }, 3500)
+
   // empty the contents of the fridge
   $('#fridge-contents').empty()
 
@@ -28,6 +40,17 @@ const createIngredientSuccess = function (data) {
 const createIngredientFailure = function (error) {
   console.log('ERROR please see below')
   console.error(error)
+
+  // sign-up failure messaging
+  $('#create-ing-msg').css('display', 'block')
+  $('#create-ing-msg').html('ERROR: Each Ingredient requires a name, unit, and quantity.')
+  $('#create-ing-msg').css('padding', '10px')
+  $('#create-ing-msg').css('color', '#f00')
+  $('#create-ing-msg').css('background', '#000')
+  $('#create-ing-msg').css('width', 'fit-content')
+  $('#create-ing-msg').css('margin', '0 auto')
+  setTimeout(function () { $('#create-ing-msg').css('display', 'none') }, 3500)
+  setTimeout(function () { $('#create-ing-msg').html('') }, 3500)
 }
 
 const deleteIngredientSuccess = function (button) {
@@ -68,11 +91,11 @@ const updateIngredientSuccess = function (data) {
   // update-ingredient success messaging
   $('#update-ing-msg').html('Ingredient Updated!')
   $('#update-ing-msg').css('padding', '10px')
+  $('#update-ing-msg').css('margin-bottom', '10px')
   $('#update-ing-msg').css('color', '#0f0')
   $('#update-ing-msg').css('background', '#444')
   $('#update-ing-msg').css('width', 'fit-content')
   $('#update-ing-msg').css('margin', '0 auto')
-  $('#update-ing-msg').css('padding', '5px')
 
   // clear update-fridge form
   // // reset sign-in form
@@ -105,6 +128,7 @@ const updateIngredientFailure = function (error) {
   // create-ingredient failure messsaging
   $('#update-ing-msg').html('Error has Occurred. Please try again!')
   $('#update-ing-msg').css('padding', '10px')
+  $('#create-ing-msg').css('margin-bottom', '10px')
   $('#update-ing-msg').css('color', '#f00')
   $('#update-ing-msg').css('background', '#000')
   $('#update-ing-msg').css('width', 'fit-content')
