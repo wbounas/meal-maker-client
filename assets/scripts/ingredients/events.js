@@ -58,11 +58,14 @@ const onSubmitUpdateIngredient = function (event) {
   const ingID = $(this).data('id') // gives you ingredient.id of parent <ul> to update-btn
   console.log('ingId is:', ingID)
   // console.log('inside onSubmitUpdateIngredient, data from getFormFields is:', data)
-  console.log('Inside onSubmitUpdateIngredient, data is:', data)
+  console.log('Inside onSubmitUpdateIngredient, ingID is:', ingID)
   api.updateIngredient(data, ingID)
     // .then($('#' + ingID).modal('hide')
     .then(ui.updateIngredientSuccess)
     .catch(ui.updateIngredientFailure)
+  $('#' + ingID).modal('hide')
+  $('#' + ingID).modal({ show: false })
+  $('.modal-backdrop').remove()
 }
 
 const showModal = function () {

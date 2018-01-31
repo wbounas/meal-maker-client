@@ -44,7 +44,7 @@ const signInSuccess = function (data) {
   $('#navbar-user-email').html(`Hello, ${store.user.email}!`)
   $('#logged-in-user-email').html(`${store.user.email}`)
 
-  // sign-in success messaging
+  // sign-in success ui messaging
   $('#sign-in-msg').html('Success! Signing in...')
   $('#sign-in-msg').css('padding', '10px')
   $('#sign-in-msg').css('color', '#0f0')
@@ -89,17 +89,21 @@ const signInFailure = function (error) {
 }
 
 const signOutSuccess = function (data) {
-  store.user = null
+  store.user = null // clear stored user
+  $('#fridge-contents').empty() // remove #fridge-contents element from the dom, plus its content
+
+  // ui messaging
   $('#logged-in-dropdown').css('display', 'none')
   $('#navbar-user-email').html(`SIGNED OUT. Goodbye!`)
   $('#logged-in-user-email').html(`SIGNED OUT`)
-  $('.account-nav').css('display', 'none')
-  $('#sign-in-msg').html('')
-  $('#sign-in-msg').css('display', 'none')
-  $('#sign-in-dropdown').css('display', 'inline-block')
-  $('.create-ingredient-test-container').css('display', 'none')
-  $('#fridge-contents').children('ul').remove()
-  $('#fridge').css('display', 'none')
+
+  $('.account-nav').css('display', 'none') // remove signed-in ui
+  $('#sign-in-dropdown').css('display', 'inline-block') // show drop down for sign-in
+  $('#sign-in-msg').html('') // clear sign-in ui messaging
+  $('#sign-in-msg').css('display', 'none') // remove sign-in ui messaging
+
+  $('.create-ingredient-test-container').css('display', 'none') // remove form for create-ingredient
+  $('#fridge').css('display', 'none') // remove #fridge div
 }
 
 const signOutFailure = function (error) {

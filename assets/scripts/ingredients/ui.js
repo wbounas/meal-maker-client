@@ -3,6 +3,7 @@
 
 const store = require('../store')
 const showIngsTemplate = require('../templates/ing-listing.handlebars')
+const modalMaker = require('../templates/modal-maker.handlebars')
 const api = require('./api')
 
 const createIngredientSuccess = function (data) {
@@ -44,7 +45,15 @@ const getIngsSuccess = function (data) {
   store.ingredients = data.ingredients // data is a JSON array containing all ingredients for that user
   // $('#fridge-contents').emtpy()
   const showIngsHtml = showIngsTemplate({ ingredients: data.ingredients })
+  const makeModal = modalMaker({ ingredients: data.ingredients })
+
+  // store.ingredients.forEach((ingredient) => { makeModal() })
+
   $('#fridge-contents').append(showIngsHtml)
+  $('#fridge-contents').append(makeModal)
+  $('#fridge-contents').css('overflow-y', 'auto')
+  $('.update-ingredient-container').css('display', 'inline-block')
+  $('.update-ingredient-container').css('overflow', 'auto')
 }
 
 const getIngsFailure = function (error) {
@@ -69,6 +78,10 @@ const updateIngredientSuccess = function (data) {
   // // reset sign-in form
   // $('#update-ingredient-form').get(0).reset()
 
+  $('#fridge-contents').css('overflow-y', 'auto')
+
+  $('.update-ingredient-container').css('display', 'inline-block')
+
   console.log('inside of update success, this is:', $(this).parents())
   $('#' + ingID).modal('hide')
   // $('.modal-backdrop fade in').css('display', 'none')
@@ -76,6 +89,9 @@ const updateIngredientSuccess = function (data) {
 
   // empty out fridge, and re-stock with newly updated ingredient included
   $('#fridge-contents').empty()
+  const makeModal = modalMaker({ ingredients: data.ingredients })
+  $('#fridge-contents').append(makeModal)
+  $('body').attr('class', 'container-fluid') // if this works, this is the $$$
 
   api.getIngredients()
     .then(getIngsSuccess)
