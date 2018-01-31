@@ -4,6 +4,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 $black: #000;
 $navbar-black: #263238;
+$white: #fff;
 
 body {
   margin: 0;
@@ -27,10 +28,20 @@ h3 {
 }
 
 .jumbotron {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  // position: fixed;
   width: fit-content;
 }
 
-.navbar {
+.jumbotron {
+  margin-bottom: 0;
+  // position: fixed;
+  width: fit-content;
+}
+
+.top-navbar {
+  background: #1a562e !important;
   width: 100%;
 }
 
@@ -38,8 +49,15 @@ h3 {
   background-color: $navbar-black;
 }
 
-.navbar-brand {
-  font-size: 34px;
+.navbar-inverse {
+  .navbar-brand {
+    color: $white;
+    font-size: 34px;
+  }
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #ddd;
 }
 
 .account-nav-header {
