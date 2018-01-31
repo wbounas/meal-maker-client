@@ -85,13 +85,14 @@ const signInFailure = function (error) {
   console.error(error)
 
   // sign-in failure messsaging
-  $('#sign-in-msg').html('Error has Occurred. Please try again!')
-  $('#sign-in-msg').css('padding', '10px')
-  $('#sign-in-msg').css('margin-bottom', '10px')
-  $('#sign-in-msg').css('color', '#f00')
-  $('#sign-in-msg').css('background', '#000')
-  $('#sign-in-msg').css('width', 'fit-content')
-  $('#sign-in-msg').css('margin', '0 auto')
+  $('.sign-in-msg').css('display', 'block')
+  $('.sign-in-msg').html('ERROR: Please double check spelling!')
+  $('.sign-in-msg').css('padding', '10px')
+  $('.sign-in-msg').css('margin-bottom', '10px')
+  $('.sign-in-msg').css('color', '#f00')
+  $('.sign-in-msg').css('background', '#000')
+  $('.sign-in-msg').css('width', 'fit-content')
+  $('.sign-in-msg').css('margin', '0 auto')
 
   // reset sign-in form
   $('#sign-in-form').each(function () {
