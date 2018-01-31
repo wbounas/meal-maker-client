@@ -34,10 +34,15 @@ h3 {
   width: fit-content;
 }
 
-.jumbotron {
-  margin-bottom: 0;
-  // position: fixed;
-  width: fit-content;
+.about-header {
+  text-align: right;
+  text-decoration: underline;
+}
+
+.about-text {
+  padding: 20px;
+  // padding-top: 40px;
+  text-align: left;
 }
 
 .top-navbar {
@@ -152,6 +157,7 @@ main {
 
 .signature {
   font-family: 'La Belle Aurore', cursive;
+  text-align: left;
 }
 
 .open-sans {

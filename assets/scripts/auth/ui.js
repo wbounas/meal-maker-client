@@ -157,15 +157,17 @@ const signOutSuccess = function (data) {
   $('.create-ingredient-test-container').css('display', 'none')
   $('#fridge').css('display', 'none')
 
+  // navbar dropdown context-changes
+  $('.logged-in-dropdown').css('display', 'none') // remove logged-in dropdown
+  $('.account-nav').css('display', 'none') // remove signed-in dropdown ui
+  $('#sign-in-dropdown').css('display', 'inline-block') // show drop down for sign-in
+
   // ui messaging
-  setTimeout(function () { $('.logged-in-dropdown').css('display', 'none') }, 2000) // remove dropdown after 2000 ml-sec
-  setTimeout(function () { $('.account-nav').css('display', 'none') }, 2000) // remove signed-in dropdown ui
-  setTimeout(function () { $('#navbar-user-email').html(`SIGNED OUT. Goodbye!`) }, 2000) // set navbar-msg after 2000 ml-sec
-  setTimeout(function () { $('#logged-in-user-email').html(`SIGNED OUT`) }, 2000) // set navbar-msg after 2000 ml-sec
-  setTimeout(function () { $('#sign-in-dropdown').css('display', 'inline-block') }, 2000) // show drop down for sign-in
+  setTimeout(function () { $('#navbar-user-email').html(`SIGNED OUT. Goodbye!`) }, 250) // set navbar-msg after 2000 ml-sec
+  setTimeout(function () { $('#logged-in-user-email').html(`SIGNED OUT`) }, 250) // set navbar-msg after 2000 ml-sec
   setTimeout(function () { $('#sign-in-msg').html('') }, 2000) // clear sign-in ui messaging
   setTimeout(function () { $('#sign-in-msg').css('display', 'none') }, 2000) // remove sign-in ui messaging
-  setTimeout(function () { $('.account-nav-msg').css('display', 'none') }, 3500) // set display: none; for ui messaging
+  setTimeout(function () { $('.account-nav-msg').css('display', 'none') }, 1000) // set display: none; for ui messaging
   setTimeout(function () { $('.account-nav-msg').html('') }, 3500) // remove html content from ui messaging
 
   $('.jumbotron').css('display', 'block')
