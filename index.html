@@ -6,6 +6,7 @@
 
     <!-- link to Octicon direcctory -->
     <link rel="stylesheet" href="assets/octicons/build/build.css">
+    <link href="https://fonts.googleapis.com/css?family=La+Belle+Aurore|Open+Sans" rel="stylesheet">
 
     <!-- Do not add `link` tags-->
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -51,14 +52,14 @@
               <li class="dropdown sign-in-dropdown" id="sign-in-dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign-In <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-
                   <li>
+
                     <form id="sign-in-form">
 
                       <!-- login box -->
                       <!-- header -->
                       <h2 class="form-signin-heading">Please login</h2>
-                      <p class="sign-in-msg" id="sign-in-msg"></p>
+                      <p class="sign-in-msg"></p>
 
                       <!-- email -->
                       <input name="credentials[email]" type="email" class="form-control sign-in-forms" name="username" placeholder="Email Address" required="" autofocus="" />
@@ -90,21 +91,19 @@
             <div class="account-nav">
               <div id="account-nav" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown logged-in-dropdown">
-                  <li class="dropdown logged-in-dropdown">
+                  <li class="dropdown logged-in-dropdown" id="logged-in-dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account Controls <span class="caret"></span></a>
 
                     <!-- body of drop down -->
                     <ul class="dropdown-menu">
                       <li>
 
-
                         <!-- Account Controls box -->
                         <!-- header -->
                         <h2 class="account-nav-header"><span id="logged-in-user-email"></span></h2>
                         <form id="change-password">
                         <h5 class="account-nav-header">Update Password</h5>
-                        <p class="account-nav-message" id="account-nav-message"></p>
+                        <p class="account-nav-msg"></p>
                         <!-- New Password Confirmation #1 -->
                         <label for="updatePassword">Old Password</label>
                         <input name="passwords[old]" type="password" class="form-control sign-in-forms" id="updatePassword" placeholder="Enter old password" required="" autofocus="" />
@@ -126,8 +125,7 @@
                   </li>
                 </div>
               </ul>
-              </div>
-            </li>
+            </div>
             <!-- END of LOGGED-IN dropdown -->
 
           </div><!-- /.navbar-collapse -->
