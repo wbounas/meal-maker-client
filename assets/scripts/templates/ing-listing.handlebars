@@ -7,7 +7,7 @@
  <!-- Developers, why are we using data-id and not just id? -->
 
 
-<table class="table table-striped" id="fridge-contents">
+<table class="table table-striped" id="fridge-table">
   <thead>
     <tr>
       <th>Ingredient ID</th>
@@ -32,50 +32,64 @@
         No notes provided.
       {{/if}}
       </td>
-      <td><button type="button" class="btn btn-warning update-btn" data-id="{{ingredient.id}}">
+      <td><button type="button" class="btn btn-warning update-btn"
+        data-id="{{ingredient.id}}"
+        data-name="{{ingredient.name}}"
+        data-unit="{{ingredient.unit}}"
+        data-quantity="{{ingredient.quantity}}"
+        data-notes="{{ingredient.notes}}">
         Update/Change
       </button></td>
       <td><button class="btn btn-danger remove-ing">Remove</button></td>
     </tr>
-    <!-- UPDATE-INGREDIENT Modal -->
-    <div class="modal fade" id="{{ingredient.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog sign-in-modal" role="document">
-        <div class="modal-content">
-          <div class="modal-body">
-
-            <!-- UDPATE-INGREDIENT container -->
-            <div class="update-ingredient-container" id="update-ingredient-container">
-
-              <h2 class="sign-up-header">Update your Ingredient!</h2>
-              <p class="update-ing-msg" id="update-ing-msg"></p>
-
-              <form role="form" class="update-ingredient-form">
-                <div class="form-group">
-                  <input name="ingredient[name]" type="text" class="form-control" placeholder="update-ingredient-name" placeholder="Enter ingredient">
-                </div>
-                <div class="form-group">
-                  <label for="update-ingredient-unit">Ingredient Unit</label>
-                  <input name="ingredient[unit]" type="text" class="form-control" placeholder="update-ingredient-unit" placeholder="Enter unit type">
-                </div>
-                <div class="form-group">
-                  <label for="update-ingredient-quantity">Ingredient Quantity</label>
-                  <input name="ingredient[quantity]" type="number" class="form-control" placeholder="update-ingredient-quantity" placeholder="Enter # of ingredient">
-                </div>
-                <div class="form-group">
-                  <label for="update-ingredient-notes">Ingredient Notes</label>
-                  <input name="ingredient[notes]" type="text" class="form-control" placeholder="update-ingredient-notes" placeholder="Enter notes about ingredient">
-                </div>
-                <button type="submit" class="btn btn-default update-ingredient-btn">Update an Ingredient in your Fridge!</button>
-              </form>
-
-            </div>
-            <!-- END UDPATE-INGREDIENT container -->
-
-          </div>
-        </div>
-      </div>
-    </div>
-      <!-- END of UPDATE-INGREDIENT modal -->
     {{/each}}
   </tbody>
 </table>
+
+{{#each ingredients as |ingredient|}}
+
+<!-- UPDATE-INGREDIENT Modal -->
+<div class="modal fade" id="{{ingredient.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog sign-in-modal" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+
+        <!-- UDPATE-INGREDIENT container -->
+        <div class="update-ingredient-container">
+
+          <h2 class="sign-up-header">Update your Ingredient!</h2>
+          <p class="update-ing-msg"</p>
+
+          <form role="form" class="update-ingredient-form" data-id="{{ingredient.id}}">
+            <div class="form-group">
+              <input name="ingredient[name]" type="text" class="form-control" value="{{ingredient.name}}">
+            </div>
+            <div class="form-group">
+              <label for="update-ingredient-unit">Ingredient Unit</label>
+              <input name="ingredient[unit]" type="text" class="form-control" value="{{ingredient.unit}}">
+            </div>
+            <div class="form-group">
+              <label for="update-ingredient-quantity">Ingredient Quantity</label>
+              <input name="ingredient[quantity]" type="number" class="form-control" value="{{ingredient.quantity}}">
+            </div>
+            <div class="form-group">
+              <label for="update-ingredient-notes">Ingredient Notes</label>
+              <input name="ingredient[notes]" type="text" class="form-control" {{#if ingredient.notes}}
+                value="{{ingredient.notes}}"
+              {{else}}
+                placeholder="No notes provided."
+              {{/if}}>
+            </div>
+            <button type="submit" class="btn btn-default update-ingredient-btn">Update an Ingredient in your Fridge!</button>
+          </form>
+
+        </div>
+        <!-- END UDPATE-INGREDIENT container -->
+
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- END of UPDATE-INGREDIENT modal -->
+
+{{/each}}

@@ -2,7 +2,6 @@
 'use strict'
 
 const store = require('../store')
-const showIngTemplate = require('../templates/add-ing-listing.handlebars')
 const showIngsTemplate = require('../templates/ing-listing.handlebars')
 const api = require('./api')
 
@@ -55,6 +54,7 @@ const getIngsFailure = function (error) {
 
 const updateIngredientSuccess = function (data) {
   console.log('PATCH ingredient worked! data is:', data)
+  const ingID = data.id
 
   // update-ingredient success messaging
   $('#update-ing-msg').html('Ingredient Updated!')
@@ -70,7 +70,7 @@ const updateIngredientSuccess = function (data) {
   // $('#update-ingredient-form').get(0).reset()
 
   console.log('inside of update success, this is:', $(this).parents())
-  $(this).modal('hide')
+  $('#' + ingID).modal('hide')
   // $('.modal-backdrop fade in').css('display', 'none')
   // $('body').removeClass('modal-open')
 
