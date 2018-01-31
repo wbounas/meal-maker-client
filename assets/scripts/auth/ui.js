@@ -62,7 +62,7 @@ const signInSuccess = function (data) {
   // make create-ingredient form, fridge, and update-ingredient form appear
   setTimeout(function () { $('.create-ingredient-test-container').css('display', 'inline-block') }, 1000)
   setTimeout(function () { $('#fridge').css('display', 'inline-block') }, 1250)
-  setTimeout(function () { $('#update-ingredient-container').css('display', 'inline-block') }, 1500)
+  setTimeout(function () { $('.update-ingredient-container').css('display', 'inline-block') }, 1500)
 
   // handlebars template to get user's ingredients
   apiIngredients.getIngredients()

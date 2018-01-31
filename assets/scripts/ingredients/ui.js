@@ -32,7 +32,7 @@ const createIngredientFailure = function (error) {
 
 const deleteIngredientSuccess = function (button) {
   // remove the <ul> from handlebars that contains the ingredient whose child had the remove button
-  $(button).parents('ul').empty()
+  $(button).parents('tr').empty()
 }
 
 const deleteIngredientFailure = function (error) {
@@ -43,6 +43,7 @@ const deleteIngredientFailure = function (error) {
 const getIngsSuccess = function (data) {
   console.log('GET ingredients worked! data is:', data)
   store.ingredients = data.ingredients // data is a JSON array containing all ingredients for that user
+  // $('#fridge-contents').emtpy()
   const showIngsHtml = showIngsTemplate({ ingredients: data.ingredients })
   $('#fridge-contents').append(showIngsHtml)
 }
@@ -65,10 +66,13 @@ const updateIngredientSuccess = function (data) {
   $('#update-ing-msg').css('padding', '5px')
 
   // clear update-fridge form
-  // reset sign-in form
-  $('#update-ingredient-form').each(function () {
-    this.reset()
-  })
+  // // reset sign-in form
+  // $('#update-ingredient-form').get(0).reset()
+
+  console.log('inside of update success, this is:', $(this).parents())
+  $(this).modal('hide')
+  // $('.modal-backdrop fade in').css('display', 'none')
+  // $('body').removeClass('modal-open')
 
   // empty out fridge, and re-stock with newly updated ingredient included
   $('#fridge-contents').empty()

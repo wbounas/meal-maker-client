@@ -17,7 +17,8 @@ const onCreateIngredient = function (event) {
 const onDeleteIngredient = function (event) {
   event.preventDefault()
   console.log('in onDeleteIngredient, this is:', this) // 'this' is the button itself
-  const data = $(this).parents('ul').data('id') // this is the ingredient's ID based on the data-id of the parent <ul> from handlebars
+  const data = $(this).parent('td').siblings('td').data('id') // this is the ingredient's ID based on the data-id of the parent <ul> from handlebars
+  console.log('in onDeleteIngredient, data is:', data)
   const fridgeRemoveBtn = event.target // event.target is the button
   api.deleteIngredient(data) // hit API for DELETE request
     .then(ui.deleteIngredientSuccess(fridgeRemoveBtn)) // if successful, empty parents of button
@@ -46,23 +47,38 @@ const getUpdateItemInfo = function (event) {
   console.log('inside getUpdateItemInfo, ingQUANTITY is', ingQUANTITY)
   console.log('inside getUpdateItemInfo, ingNOTES is', ingNOTES)
   console.log('update ingredient button worked!')
+  // $('.update-ingredient-form').on('submit', onSubmitUpdateIngredient)
+}
 
-  const onSubmitUpdateIngredient = function (event) {
-    const data = getFormFields(this)
-    event.preventDefault()
-    api.updateIngredient(data, ingID)
-      .then(ui.updateIngredientSuccess)
-      .catch(ui.updateIngredientFailure)
-  }
+const onSubmitUpdateIngredient = function (event) {
+  console.log('inside onSubmitUpdateIngredient, event.target is:', event.target)
+  const data = getFormFields(event.target)
+  const ingID = $(this).parents('ul').data('id') // gives you ingredient.id of parent <ul> to update-btn
+  console.log('ingId is:', ingID)
+  // console.log('inside onSubmitUpdateIngredient, data from getFormFields is:', data)
+  console.log('Inside onSubmitUpdateIngredient, data is:', data)
+  event.preventDefault()
+  api.updateIngredient(data, ingID)
+    // .then($('#' + ingID).modal('hide')
+    .then(ui.updateIngredientSuccess)
+    .catch(ui.updateIngredientFailure)
+}
 
-  $('#update-ingredient-form').on('submit', onSubmitUpdateIngredient)
+const showModal = function () {
+  const foo = $(this).data('id')
+  console.log('inside showModal, this is', foo)
+  $('#' + foo).modal({ show: false })
+  $('#' + foo).modal('show')
 }
 
 const addHandlers = function () {
+  console.log()
   $('#create-ingredient-test').on('submit', onCreateIngredient)
+  $('body').on('submit', '.update-ingredient-form', onSubmitUpdateIngredient)
   // $('#update-ingredient-form').on('submit', onUpdateIngredient)
-  $('body').on('click', '#update-ing', getUpdateItemInfo)
-  $('body').on('click', '#remove-ing', onDeleteIngredient)
+  $('body').on('click', '.update-btn', getUpdateItemInfo)
+  $('body').on('click', '.update-btn', showModal)
+  $('body').on('click', '.remove-ing', onDeleteIngredient)
 }
 
 module.exports = {
