@@ -171,22 +171,36 @@
         </div>
       </div>
       <!-- END of Sign-Up modal -->
-
-      <h1>Meal[Maker]<br></h1>
-      <h3>Front-End Client BETA</h3>
-
     </header>
 
     <main>
 
-      <div class="container">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-        est laborum.</p>
+      <div class="jumbotron">
+        <h1 class="text-center">Meal[Maker]</h1>
+        <!-- <div class="container">
+          <h4><span class="label label-default">What's in the fridge??</span></h4>
+        </div> -->
+        <p class="text-center">
+          Meal[Maker] easily allows you to keep track of all of the ingredients
+          inside of your fridge.<br></p>
+
+        <div class="container text-center">
+          <button type="button" class="btn btn-lg btn-primary btn-warning btn-bloc create-account-btn" data-toggle="modal" data-target="#sign-up-modal">
+            Create an Account
+          </button>
+        </div>
+
+        <h2 style="text-align: center;">FEATURES COMING SOON</h2>
+
+        <p><b>Version 2</b>: Getting hungry throughout the day? Plan dinner ahead of time,
+          and create meals based off of the ingredients you
+          know you have in your fridge!<br><br>
+
+          <b>Version 3</b>: Are you planning on cooking that special meal, but you know you
+          need to grab chickpeas and pita from the grocery store? Now, create meals
+          with ingredients that you don't have in your fridge, and they'll automatically
+          be added to a shopping list for quick and easy access!
+        </p>
       </div>
 
       <!-- container for all forms in <main> -->
@@ -215,7 +229,9 @@
               <label for="ingredient-notes1">Ingredient Notes</label>
               <input name="ingredient[notes]" type="text" class="form-control" id="ingredient-notes1" placeholder="Enter notes about ingredient">
             </div>
-            <button type="submit" class="btn btn-default">Add an Ingredient to your Fridge!</button>
+            <div class="text-right">
+              <button type="submit" class="btn btn-success"><h4>Add an Ingredient to your Fridge!</h4></button>
+            </div>
           </form>
 
         </div>
@@ -245,7 +261,7 @@
       <div class="navbar navbar-default navbar-fixed-bottom">
         <div class="container">
           <p class="navbar-text pull-left">&copy; 2018 Built with <img alt="heart" src="assets/octicons/build/svg/heart.svg" /> by Will Bounas
-               <a href="http://tinyurl.com/tbvalid" target="_blank" >HTML 5 Validation</a>
+               <a href="https://wbounas.github.io/meal-maker-client" target="_blank" >HTML 5 Validation</a>
           </p>
 
             <a href="https://www.github.com/wbounas/meal-maker-client" class="navbar-btn btn-danger btn pull-right">

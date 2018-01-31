@@ -56,6 +56,7 @@ const signInSuccess = function (data) {
   $('.sign-in-msg').css('margin', '0 auto')
   $('.sign-in-msg').css('padding', '5px')
 
+  setTimeout(function () { $('.jumbotron').css('display', 'none') }, 1000)
   setTimeout(function () { $('#sign-in-dropdown').css('display', 'none') }, 2000) // remove sign-in dropdown after 2000 ml-sec
   setTimeout(function () { $('#logged-in-dropdown').css('display', 'inline-block') }, 2000) // show account-nav dropdown after 2000 ml-sec
   setTimeout(function () { $('.account-nav').css('display', 'block') }, 2000)
@@ -157,6 +158,8 @@ const signOutSuccess = function (data) {
   setTimeout(function () { $('#sign-in-msg').css('display', 'none') }, 2000) // remove sign-in ui messaging
   setTimeout(function () { $('.account-nav-msg').css('display', 'none') }, 3500) // set display: none; for ui messaging
   setTimeout(function () { $('.account-nav-msg').html('') }, 3500) // remove html content from ui messaging
+
+  $('.jumbotron').css('display', 'block')
 }
 
 const signOutFailure = function (error) {

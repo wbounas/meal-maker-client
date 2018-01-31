@@ -17,8 +17,17 @@ h3 {
   text-align: center;
 }
 
-h1 {
-  line-height: 0;
+// h1 {
+//   line-height: 0;
+// }
+
+.create-account-btn {
+  margin-bottom: 84px;
+  width: fit-content;
+}
+
+.jumbotron {
+  width: fit-content;
 }
 
 .navbar {
@@ -81,10 +90,11 @@ main {
 
 .get-ingredients-test-container {
   border: 1px solid $black;
+  // border-top-left-radius: 200px;
   display: none;
   margin: 0 auto;
   // margin-left: 50px;
-  padding: 20px;
+  padding: 0;
   // width: fit-content;
 }
 
@@ -113,6 +123,12 @@ main {
 
 .account-nav {
   display: none;
+}
+
+.blurb {
+  background: #eee;
+  margin: 42px 0;
+  padding: 20px;
 }
 
 .signature {
