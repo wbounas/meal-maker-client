@@ -22,6 +22,20 @@ const signIn = function (data) {
   })
 }
 
+// send PATCH to /change-password/:id
+const changePassword = function (data) {
+  // console.log(data)
+  // console.log('When trying to Change Password, the data in "store" is:', store)
+  return $.ajax({
+    url: config.apiOrigin + '/change-password/' + store.user.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 // send DELETE to /sign-out/:id
 const signOut = function (data) {
   console.log('store.user.token before signOut is:', store.user.token)
@@ -38,5 +52,6 @@ const signOut = function (data) {
 module.exports = {
   signUp,
   signIn,
+  changePassword,
   signOut
 }

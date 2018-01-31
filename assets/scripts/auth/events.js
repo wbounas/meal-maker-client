@@ -23,11 +23,13 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure)
 }
 
-// const onChangePassword = function () {
-//   const data = getFormFields(this)
-//   event.preventDefault()
-//   console.log('hellow world! data is:', data)
-// }
+const onChangePassword = function (event) {
+  const data = getFormFields(this)
+  event.preventDefault()
+  api.changePassword(data)
+    .then(ui.changePasswordSuccess)
+    .catch(ui.changePasswordFailure)
+}
 
 const onSignOut = function () {
   event.preventDefault()
@@ -39,6 +41,7 @@ const onSignOut = function () {
 const addHandlers = function () {
   $('#sign-up-form').on('submit', onSignUp)
   $('#sign-in-form').on('submit', onSignIn)
+  $('#change-password').on('submit', onChangePassword)
   $('#sign-out-btn').on('click', onSignOut)
 }
 

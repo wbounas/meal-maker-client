@@ -70,6 +70,32 @@ const signInSuccess = function (data) {
     .catch(uiIngredients.getIngsFailure)
 }
 
+const changePasswordSuccess = function (data) {
+  // console.log below will return UNDEFINED
+  // console.log('Change Password Successful! Data is:', data)
+  $('#account-nav-message').html('Changed Password Successfully!')
+  $('#account-nav-message').css('color', '#0f0')
+  $('#account-nav-message').css('background', '#777')
+  $('#account-nav-message').css('width', 'fit-content')
+  $('#account-nav-message').css('margin', '0 auto')
+  $('#change-password').each(function () {
+    this.reset()
+  })
+  setTimeout(function () { $('#account-nav-message').html('') }, 3000)
+}
+
+const changePasswordFailure = function () {
+  // console.error(error)
+  $('#account-nav-message').html('Error has Occurred')
+  $('#account-nav-message').css('color', '#f00')
+  $('#account-nav-message').css('background', '#777')
+  $('#account-nav-message').css('width', 'fit-content')
+  $('#account-nav-message').css('margin', '0 auto')
+  $('#change-password').each(function () {
+    this.reset()
+  })
+}
+
 const signInFailure = function (error) {
   console.log('error occurred! please see below for more details:')
   console.error(error)
@@ -116,6 +142,8 @@ module.exports = {
   signUpFailure,
   signInSuccess,
   signInFailure,
+  changePasswordSuccess,
+  changePasswordFailure,
   signOutSuccess,
   signOutFailure
 }
