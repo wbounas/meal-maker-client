@@ -11,15 +11,15 @@ const signUpSuccess = function (data) {
 
   // sign-up success messaging
   $('#sign-up-msg').css('display', 'block')
-  $('#sign-up-msg').html('Account Created! Please Sign In!')
+  $('#sign-up-msg').html('Account Created! Please Sign In to use the app!')
   $('#sign-up-msg').css('padding', '10px')
   $('#sign-up-msg').css('margin-bottom', '10px')
   $('#sign-up-msg').css('color', '#0f0')
   $('#sign-up-msg').css('background', '#444')
   $('#sign-up-msg').css('width', 'fit-content')
   $('#sign-up-msg').css('margin', '0 auto')
-  setTimeout(function () { $('#sign-up-msg').css('display', 'none') }, 7000)
-  setTimeout(function () { $('#sign-up-msg').html('') }, 7000)
+  setTimeout(function () { $('#sign-up-msg').css('display', 'none') }, 70000)
+  setTimeout(function () { $('#sign-up-msg').html('') }, 70000)
 
   // reset sign-up form
   $('#sign-up-form').each(function () {
@@ -58,6 +58,8 @@ const signInSuccess = function (data) {
   $('.sign-in-msg').css('width', 'fit-content')
   $('.sign-in-msg').css('margin', '0 auto')
 
+  $('.create-ing-msg').css('display', 'static')
+
   setTimeout(function () { $('.jumbotron').css('display', 'none') }, 1000)
   setTimeout(function () { $('#sign-in-dropdown').css('display', 'none') }, 2000) // remove sign-in dropdown after 2000 ml-sec
   setTimeout(function () { $('#logged-in-dropdown').css('display', 'inline-block') }, 2000) // show account-nav dropdown after 2000 ml-sec
@@ -71,6 +73,8 @@ const signInSuccess = function (data) {
 
   // make create-ingredient form, fridge, and update-ingredient form appear
   setTimeout(function () { $('.create-ingredient-test-container').css('display', 'inline-block') }, 1000)
+  setTimeout(function () { $('.create-ing-msg').css('background', '#fff') }, 1000)
+  setTimeout(function () { $('.create-ing-msg').css('display', 'static') }, 1000)
   setTimeout(function () { $('#fridge').css('display', 'inline-block') }, 1250)
   setTimeout(function () { $('.update-ingredient-container').css('display', 'inline-block') }, 1500)
 
@@ -137,6 +141,7 @@ const changePasswordFailure = function (error) {
 
 const signOutSuccess = function (data) {
   store.user = null // clear stored user
+  store.ingredients = null // clear stored ingredients
   $('#fridge-contents').empty() // remove #fridge-contents element from the dom, plus its content
 
   $('.account-nav-msg').css('display', 'block')
@@ -147,6 +152,8 @@ const signOutSuccess = function (data) {
   $('.account-nav-msg').css('background', '#444')
   $('.account-nav-msg').css('width', 'fit-content')
   $('.account-nav-msg').css('margin', '0 auto')
+  $('.create-ing-msg').css('background', '#fff')
+  $('.create-ing-msg').css('display', 'static')
   $('#change-password').each(function () {
     this.reset()
   })

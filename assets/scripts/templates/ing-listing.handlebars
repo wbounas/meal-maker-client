@@ -21,9 +21,9 @@
     {{#each ingredients as |ingredient|}}
     <tr>
       <td data-id="{{ingredient.id}}">{{ingredient.id}}</td>
-      <td class="name" data-name="{{ingredient.name}}"> <small>{{ingredient.name}}</small> </td>
-      <td class="unit" data-unit="{{ingredient.unit}}"> <small>{{ingredient.unit}}</small> </td>
-      <td class="quantity" data-quantity="{{ingredient.quantity}}"> <small>{{ingredient.quantity}}</small> </td>
+      <td class="name" data-name="{{ingredient.name}}"> {{ingredient.name}} </td>
+      <td class="unit" data-unit="{{ingredient.unit}}"> {{ingredient.unit}} </td>
+      <td class="quantity" data-quantity="{{ingredient.quantity}}"> {{ingredient.quantity}} </td>
       <td class="notes" data-notes="{{ingredient.notes}}"> {{#if ingredient.notes}}
         {{ingredient.notes}}
       {{else}}

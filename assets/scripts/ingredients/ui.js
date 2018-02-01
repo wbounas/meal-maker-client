@@ -17,16 +17,19 @@ const createIngredientSuccess = function (data) {
   })
 
   // create-ingredient success messaging
-  $('#create-ing-msg').css('display', 'block')
-  $('#create-ing-msg').html('Ingredient created, and added to your fridge!')
-  $('#create-ing-msg').css('padding', '10px')
-  $('#create-ing-msg').css('margin-bottom', '10px')
-  $('#create-ing-msg').css('color', '#0f0')
-  $('#create-ing-msg').css('background', '#444')
-  $('#create-ing-msg').css('width', 'fit-content')
-  $('#create-ing-msg').css('margin', '0 auto')
-  setTimeout(function () { $('#create-ing-msg').css('display', 'none') }, 3500)
-  setTimeout(function () { $('#create-ing-msg').html('') }, 3500)
+  $('.create-ing-msg').text('')
+  $('.create-ing-msg').css('display', 'block')
+  $('.create-ing-msg').text('Ingredient created, and added to your fridge!')
+  $('.create-ing-msg').css('padding', '10px')
+  $('.create-ing-msg').css('margin-bottom', '10px')
+  $('.create-ing-msg').css('color', '#0f0')
+  $('.create-ing-msg').css('background', '#444')
+  $('.create-ing-msg').css('width', 'fit-content')
+  $('.create-ing-msg').css('margin', '0 auto')
+  setTimeout(function () { $('.create-ing-msg').css('display', 'static') }, 3500)
+  setTimeout(function () { $('.create-ing-msg').css('background', '#fff') }, 3500)
+  setTimeout(function () { $('.create-ing-msg').css('color', '#000') }, 3500)
+  setTimeout(function () { $('.create-ing-msg').html('') }, 3500)
 
   // empty the contents of the fridge
   $('#fridge-contents').empty()
@@ -41,16 +44,16 @@ const createIngredientFailure = function (error) {
   console.log('ERROR please see below')
   console.error(error)
 
-  // sign-up failure messaging
-  $('#create-ing-msg').css('display', 'block')
-  $('#create-ing-msg').html('ERROR: Each Ingredient requires a name, unit, and quantity.')
-  $('#create-ing-msg').css('padding', '10px')
-  $('#create-ing-msg').css('color', '#f00')
-  $('#create-ing-msg').css('background', '#000')
-  $('#create-ing-msg').css('width', 'fit-content')
-  $('#create-ing-msg').css('margin', '0 auto')
-  setTimeout(function () { $('#create-ing-msg').css('display', 'none') }, 3500)
-  setTimeout(function () { $('#create-ing-msg').html('') }, 3500)
+  // create-ingredient failure messaging
+  $('.create-ing-msg').css('display', 'block')
+  $('.create-ing-msg').html('ERROR: Each Ingredient requires a name, unit, and quantity.')
+  $('.create-ing-msg').css('padding', '10px')
+  $('.create-ing-msg').css('color', '#f00')
+  $('.create-ing-msg').css('background', '#000')
+  $('.create-ing-msg').css('width', 'fit-content')
+  $('.create-ing-msg').css('margin', '0 auto')
+  setTimeout(function () { $('.create-ing-msg').css('display', 'none') }, 3500)
+  setTimeout(function () { $('.create-ing-msg').html('') }, 3500)
 }
 
 const deleteIngredientSuccess = function (button) {
@@ -64,13 +67,24 @@ const deleteIngredientFailure = function (error) {
 }
 
 const getIngsSuccess = function (data) {
-  console.log('GET ingredients worked! data is:', data)
+  // console.log('GET ingredients worked! data is:', data)
   store.ingredients = data.ingredients // data is a JSON array containing all ingredients for that user
   // $('#fridge-contents').emtpy()
+  console.log('store.ingredients is:', store.ingredients.length)
   const showIngsHtml = showIngsTemplate({ ingredients: data.ingredients })
   const makeModal = modalMaker({ ingredients: data.ingredients })
 
-  // store.ingredients.forEach((ingredient) => { makeModal() })
+  const checkStoreIngredientsEmpty = function (storedIngredients) {
+    if (storedIngredients.length >= 1) {
+      return false
+    } else {
+      return true
+    }
+  }
+
+  if (checkStoreIngredientsEmpty(store.ingredients)) {
+    $('.create-ing-msg').text('To start, try adding an ingredient you know you have at home in your Meal[Maker] fridge!')
+  }
 
   $('#fridge-contents').append(showIngsHtml)
   $('#fridge-contents').append(makeModal)
@@ -128,7 +142,7 @@ const updateIngredientFailure = function (error) {
   // create-ingredient failure messsaging
   $('#update-ing-msg').html('Error has Occurred. Please try again!')
   $('#update-ing-msg').css('padding', '10px')
-  $('#create-ing-msg').css('margin-bottom', '10px')
+  $('.create-ing-msg').css('margin-bottom', '10px')
   $('#update-ing-msg').css('color', '#f00')
   $('#update-ing-msg').css('background', '#000')
   $('#update-ing-msg').css('width', 'fit-content')
