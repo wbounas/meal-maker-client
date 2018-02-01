@@ -7,7 +7,7 @@ const uiIngredients = require('../ingredients/ui')
 
 const signUpSuccess = function (data) {
   store.user = data.user
-  console.log('sign up success! store.user is:', store.user)
+  // console.log('sign up success! store.user is:', store.user)
 
   // sign-up success messaging
   $('#sign-up-msg').css('display', 'block')
@@ -28,7 +28,7 @@ const signUpSuccess = function (data) {
 }
 
 const signUpFailure = function (error) {
-  console.log('error occurred! please see below for more details:')
+  // console.log('error occurred! please see below for more details:')
   console.error(error)
 
   // sign-up failure messaging
@@ -85,7 +85,7 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function (error) {
-  console.log('error occurred! please see below for more details:')
+  // console.log('error occurred! please see below for more details:')
   console.error(error)
 
   // sign-in failure messsaging
@@ -105,8 +105,8 @@ const signInFailure = function (error) {
 }
 
 const changePasswordSuccess = function (data) {
-  // console.log below will return UNDEFINED
-  // console.log('Change Password Successful! Data is:', data)
+  // // console.log below will return UNDEFINED
+  // // console.log('Change Password Successful! Data is:', data)
   $('.account-nav-msg').css('display', 'block')
   $('.account-nav-msg').html('Changed Password Successfully!')
   $('.account-nav-msg').css('padding', '10px')
@@ -182,7 +182,7 @@ const signOutSuccess = function (data) {
 }
 
 const signOutFailure = function (error) {
-  console.log('ERROR has occured! please see below')
+  // console.log('ERROR has occured! please see below')
   console.error(error)
 }
 

@@ -7,7 +7,7 @@ const modalMaker = require('../templates/modal-maker.handlebars')
 const api = require('./api')
 
 const createIngredientSuccess = function (data) {
-  // console.log('it worked! data inside of createIngredientSuccess is:', data)
+  // // console.log('it worked! data inside of createIngredientSuccess is:', data)
   // const showIngHtml = showIngTemplate({ ingredient: data.ingredient }) // data is the return from the API call
   // $('#fridge').append(showIngHtml)
 
@@ -41,7 +41,7 @@ const createIngredientSuccess = function (data) {
 }
 
 const createIngredientFailure = function (error) {
-  console.log('ERROR please see below')
+  // console.log('ERROR please see below')
   console.error(error)
 
   // create-ingredient failure messaging
@@ -62,15 +62,15 @@ const deleteIngredientSuccess = function (button) {
 }
 
 const deleteIngredientFailure = function (error) {
-  console.log('ERROR has occurred, please see below')
+  // console.log('ERROR has occurred, please see below')
   console.error(error)
 }
 
 const getIngsSuccess = function (data) {
-  // console.log('GET ingredients worked! data is:', data)
+  // // console.log('GET ingredients worked! data is:', data)
   store.ingredients = data.ingredients // data is a JSON array containing all ingredients for that user
   // $('#fridge-contents').emtpy()
-  console.log('store.ingredients is:', store.ingredients.length)
+  // console.log('store.ingredients is:', store.ingredients.length)
   const showIngsHtml = showIngsTemplate({ ingredients: data.ingredients })
   const makeModal = modalMaker({ ingredients: data.ingredients })
 
@@ -94,12 +94,12 @@ const getIngsSuccess = function (data) {
 }
 
 const getIngsFailure = function (error) {
-  console.log('ERROR please see below')
+  // console.log('ERROR please see below')
   console.error(error)
 }
 
 const updateIngredientSuccess = function (data) {
-  console.log('PATCH ingredient worked! data is:', data)
+  // console.log('PATCH ingredient worked! data is:', data)
   const ingID = data.id
 
   // update-ingredient success messaging
@@ -119,7 +119,7 @@ const updateIngredientSuccess = function (data) {
 
   $('.update-ingredient-container').css('display', 'inline-block')
 
-  console.log('inside of update success, this is:', $(this).parents())
+  // console.log('inside of update success, this is:', $(this).parents())
   $('#' + ingID).modal('hide')
   // $('.modal-backdrop fade in').css('display', 'none')
   // $('body').removeClass('modal-open')
@@ -136,7 +136,7 @@ const updateIngredientSuccess = function (data) {
 }
 
 const updateIngredientFailure = function (error) {
-  console.log('ERROR please see below')
+  // console.log('ERROR please see below')
   console.error(error)
 
   // create-ingredient failure messsaging

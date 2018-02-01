@@ -24,8 +24,8 @@ const signIn = function (data) {
 
 // send PATCH to /change-password/:id
 const changePassword = function (data) {
-  // console.log(data)
-  // console.log('When trying to Change Password, the data in "store" is:', store)
+  // // console.log(data)
+  // // console.log('When trying to Change Password, the data in "store" is:', store)
   return $.ajax({
     url: config.apiOrigin + '/change-password/' + store.user.id,
     method: 'PATCH',
@@ -38,7 +38,7 @@ const changePassword = function (data) {
 
 // send DELETE to /sign-out/:id
 const signOut = function (data) {
-  console.log('store.user.token before signOut is:', store.user.token)
+  // // console.log('store.user.token before signOut is:', store.user.token)
   return $.ajax({
     url: config.apiOrigin + '/sign-out',
     method: 'DELETE',

@@ -8,7 +8,7 @@ const ui = require('./ui')
 const onSignUp = function () {
   const data = getFormFields(this)
   event.preventDefault()
-  console.log('hello world. data is :', data)
+  // console.log('hello world. data is :', data)
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
@@ -17,7 +17,7 @@ const onSignUp = function () {
 const onSignIn = function (event) {
   const data = getFormFields(this) // data is stored as a "credentials" JSON array containing 'email' and 'password' key/value pairs
   event.preventDefault()
-  // console.log('hello world! data is:', data)
+  // // console.log('hello world! data is:', data)
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
@@ -33,7 +33,7 @@ const onChangePassword = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
-  console.log('in onSignOut, event is:', event)
+  // console.log('in onSignOut, event is:', event)
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
