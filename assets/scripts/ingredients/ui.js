@@ -99,7 +99,7 @@ const getIngsFailure = function (error) {
 }
 
 const updateIngredientSuccess = function (data) {
-  // console.log('PATCH ingredient worked! data is:', data)
+  console.log('PATCH ingredient worked! data is:', data)
   const ingID = data.id
 
   // update-ingredient success messaging
@@ -129,6 +129,9 @@ const updateIngredientSuccess = function (data) {
   const makeModal = modalMaker({ ingredients: data.ingredients })
   $('#fridge-contents').append(makeModal)
   $('body').attr('class', 'container-fluid') // if this works, this is the $$$
+  $('#' + ingID).modal('hide')
+  $('#' + ingID).modal({ show: false })
+  $('.modal-backdrop').remove()
 
   api.getIngredients()
     .then(getIngsSuccess)
@@ -140,13 +143,13 @@ const updateIngredientFailure = function (error) {
   console.error(error)
 
   // create-ingredient failure messsaging
-  $('#update-ing-msg').html('Error has Occurred. Please try again!')
-  $('#update-ing-msg').css('padding', '10px')
+  $('.update-ing-msg').html('ERROR: Name, Unit, or Quantity cannot be blank!')
+  $('.update-ing-msg').css('padding', '10px')
   $('.create-ing-msg').css('margin-bottom', '10px')
-  $('#update-ing-msg').css('color', '#f00')
-  $('#update-ing-msg').css('background', '#000')
-  $('#update-ing-msg').css('width', 'fit-content')
-  $('#update-ing-msg').css('margin', '0 auto')
+  $('.update-ing-msg').css('color', '#f00')
+  $('.update-ing-msg').css('background', '#000')
+  $('.update-ing-msg').css('width', 'fit-content')
+  $('.update-ing-msg').css('margin', '0 auto')
 }
 
 module.exports = {

@@ -63,9 +63,6 @@ const onSubmitUpdateIngredient = function (event) {
     // .then($('#' + ingID).modal('hide')
     .then(ui.updateIngredientSuccess)
     .catch(ui.updateIngredientFailure)
-  $('#' + ingID).modal('hide')
-  $('#' + ingID).modal({ show: false })
-  $('.modal-backdrop').remove()
 }
 
 const showModal = function () {
