@@ -143,13 +143,17 @@ const updateIngredientFailure = function (error) {
   console.error(error)
 
   // create-ingredient failure messsaging
+  $('.update-ing-msg').css('display', 'block')
   $('.update-ing-msg').html('ERROR: Name, Unit, or Quantity cannot be blank!')
   $('.update-ing-msg').css('padding', '10px')
-  $('.create-ing-msg').css('margin-bottom', '10px')
+  $('.update-ing-msg').css('margin-bottom', '10px')
   $('.update-ing-msg').css('color', '#f00')
   $('.update-ing-msg').css('background', '#000')
   $('.update-ing-msg').css('width', 'fit-content')
   $('.update-ing-msg').css('margin', '0 auto')
+  setTimeout(function () { $('.update-ing-msg').css('display', 'none') }, 3500)
+  setTimeout(function () { $('.update-ing-msg').html('') }, 3500)
+  setTimeout(function () { $('.update-ingredient-form').trigger('reset') }, 3500)
 }
 
 module.exports = {
