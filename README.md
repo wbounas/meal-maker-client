@@ -1,4 +1,4 @@
-# **Meal[Maker] Front-End Client v.1**
+# **Meal[Maker] Front-End Client v.1.1**
 # **ReadME**
 
 Thank you for checking out **Meal[Maker]**!
@@ -13,7 +13,7 @@ Try out the client here:
 https://wbounas.github.io/meal-maker-client
 
 **Technologies Used:**
-JavaScript, jQuery, AJAX, HTML5, CSS3 + Sass, handlebars
+JavaScript, jQuery, AJAX, Bootstrap, HTML5, CSS3 + Sass, handlebars
 
 ### **About**
 
